@@ -8,8 +8,8 @@ namespace xadrez_projeto
     {
         static void Main(string[] args)
         {
-           
 
+            
             try
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
@@ -21,13 +21,16 @@ namespace xadrez_projeto
                     Console.WriteLine();
                     Console.Write("Origem: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+                    
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+                    Console.WriteLine();
                     Console.Write("Destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
                     partida.executaMovimento(origem, destino);
-                }
-               
-
+                }               
                 
             }
             catch (tabuleiroException e)  {
