@@ -2,7 +2,6 @@
 using tabuleiro;
 using xadrez;
 
-
 namespace xadrez_projeto
 {
     class Program
@@ -12,7 +11,6 @@ namespace xadrez_projeto
             PartidaDeXadrez partida = new PartidaDeXadrez();
             while (!partida.terminada)
             {
-
                 try
                 {
                     Console.Clear();
@@ -38,6 +36,8 @@ namespace xadrez_projeto
                     Console.ReadLine();
                 }
             }
+            Console.Clear();
+            Tela.imprimirPartida(partida);
             Console.ReadLine();
         }
     }

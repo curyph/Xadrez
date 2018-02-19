@@ -13,12 +13,24 @@ namespace xadrez_projeto
             Console.WriteLine();
             imprimirPecasCapturadas(partida);
             Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando Jogada: " + partida.jogadorAtual);
+            if (!partida.terminada)
+            {                
+                Console.WriteLine("Aguardando Jogada: " + partida.jogadorAtual);
+                if (partida.xeque)
+                {
+                    Console.Write("XEQUE!");
+                }                
+            }
+            else
+            {
+                Console.WriteLine("XEQUE MATE");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
+            }
         }
 
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
         {
-            Console.WriteLine("Pecas Capturadas: ");
+            Console.WriteLine("Peças Capturadas: ");
             Console.Write("Brancas: ");
             imprimirConjunto(partida.pecaCapturada(Cor.Branca));
             Console.WriteLine();
