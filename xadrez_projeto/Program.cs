@@ -38,6 +38,7 @@ namespace xadrez_projeto
             }
             Console.Clear();
             Tela.imprimirPartida(partida);
+            AddHistorico.Vencedor(partida);
             Console.ReadLine();
         }
     }

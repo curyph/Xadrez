@@ -71,7 +71,7 @@ namespace xadrez
 
             if (testeXequeMate(adversaria(jogadorAtual)))
             {
-                terminada = true;
+                terminada = true;                
             }
             else
             {
