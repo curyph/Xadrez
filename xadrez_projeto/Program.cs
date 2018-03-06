@@ -8,6 +8,7 @@ namespace xadrez_projeto
     {
         static void Main(string[] args)
         {
+            
             PartidaDeXadrez partida = new PartidaDeXadrez();
             while (!partida.terminada)
             {
@@ -38,7 +39,7 @@ namespace xadrez_projeto
             }
             Console.Clear();
             Tela.imprimirPartida(partida);
-            AddHistorico.Vencedor(partida);
+            //AddHistorico.Vencedor(partida); Inserida na classe partidadexadrez
             Console.ReadLine();
         }
     }

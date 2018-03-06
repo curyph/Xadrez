@@ -165,7 +165,8 @@ namespace xadrez
 
             if (testeXequeMate(adversaria(jogadorAtual)))
             {
-                terminada = true;                
+                terminada = true;
+                AddHistorico.Vencedor(this);               
             }
             else
             {

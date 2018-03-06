@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 namespace xadrez
 {
@@ -18,6 +19,34 @@ namespace xadrez
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DBConnect.myConnection.Close();
+            }
+        }
+
+        public static void historicoDePartidas()
+        {
+            try
+            {
+                DBConnect.myConnection.Open();
+                SqlCommand myCommand = new SqlCommand("select ID_Partida, Player, DATA, TURNOS FROM PARTIDAS", DBConnect.myConnection);
+                var dataAdapter = new SqlDataAdapter(myCommand.CommandText, DBConnect.myConnection);
+                var ds = new DataSet();
+                SqlDataReader reader = myCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    // write the data on to the screen
+                    Console.WriteLine(String.Format("{0} \t | {1} \t | {2} \t | {3}",
+                        // call the objects from their index
+                    reader[0], reader[1], reader[2], reader[3]));
+                }
+
+            }
+            catch (Exception ex)
+            {
+               Console.WriteLine(ex.ToString());
             }
             finally
             {
