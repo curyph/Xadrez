@@ -7,6 +7,15 @@ namespace xadrez_projeto
 {
     class Tela
     {
+        public static void menuPrincipal()
+        {
+            Console.WriteLine("(1) - Iniciar Partida");
+            Console.WriteLine("(2) - Exibir Histórico de Partidas");
+            Console.WriteLine("(3) - Sair");
+            
+           
+        }
+
         public static void imprimirPartida(PartidaDeXadrez partida)
         {
             imprimirTabuleiro(partida.tab);

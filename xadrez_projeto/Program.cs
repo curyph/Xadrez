@@ -8,7 +8,22 @@ namespace xadrez_projeto
     {
         static void Main(string[] args)
         {
-            
+            Tela.menuPrincipal();
+            int opcao = 0;
+            while (opcao != 1)
+            {
+                Console.Clear();
+                Tela.menuPrincipal();
+                opcao = int.Parse(Console.ReadLine());
+                switch (opcao)
+                {
+                    case 2: AddHistorico.historicoDePartidas();
+                        Console.ReadLine();
+                        break;
+                    case 3: Environment.Exit(0);
+                        break;
+                }
+            }
             PartidaDeXadrez partida = new PartidaDeXadrez();
             while (!partida.terminada)
             {
@@ -38,8 +53,7 @@ namespace xadrez_projeto
                 }
             }
             Console.Clear();
-            Tela.imprimirPartida(partida);
-            //AddHistorico.Vencedor(partida); Inserida na classe partidadexadrez
+            Tela.imprimirPartida(partida);            
             Console.ReadLine();
         }
     }
